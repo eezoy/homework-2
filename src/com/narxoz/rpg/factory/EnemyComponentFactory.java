@@ -90,6 +90,6 @@ public interface EnemyComponentFactory {
      *
      * @return AI behavior description or type
      */
-    String createAIBehavior();
+    EnemyBehavior createAIBehavior();
 
 }
