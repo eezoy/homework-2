@@ -13,6 +13,7 @@ public class EnemyDirector {
             .setSpeed(25)
             .setAbilities(componentFactory.createAbilities())
             .setLootTable(componentFactory.createLootTable())
+            .setAI(componentFactory.createAIBehavior())
             .build();
     }
 
@@ -25,6 +26,7 @@ public class EnemyDirector {
             .setSpeed(30)
             .setAbilities(componentFactory.createAbilities())
             .setLootTable(componentFactory.createLootTable())
+            .setAI(componentFactory.createAIBehavior())
             .build();
     }
 
@@ -39,6 +41,7 @@ public class EnemyDirector {
             .addPhase(2, 500)
             .setAbilities(componentFactory.createAbilities())
             .setLootTable(componentFactory.createLootTable())
+            .setAI(componentFactory.createAIBehavior())
             .build();
     }
 
@@ -57,6 +60,7 @@ public class EnemyDirector {
             .setWingspan(20)
             .setAbilities(componentFactory.createAbilities())
             .setLootTable(componentFactory.createLootTable())
+            .setAI(componentFactory.createAIBehavior())
             .build();
     }
 }

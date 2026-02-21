@@ -91,15 +91,13 @@ public class Orc implements Enemy{
     @Override
     public void displayInfo() {
         System.out.println("=== " + name + " (Orc) ===");
-        System.out.println("Health: " + health + " | Damage: " + damage
-                + " | Defense: " + defense + " | Speed: " + speed);
+        System.out.println("Health: " + health + " | Damage: " + damage + " | Defense: " + defense + " | Speed: " + speed);
+        System.out.println("Element: " + (element != null ? element : "None"));
         System.out.println("Abilities: " + abilities.size() + " ability(ies)");
         for (Ability ability : abilities) {
             System.out.println("  - " + ability.getName() + " (Damage: " + ability.getDamage() + ")");
         }
-        if (lootTable != null) {
-            System.out.println("Loot: " + lootTable.getLootInfo());
-        }
+        System.out.println("Loot: " + lootTable.getLootInfo());
     }
 
     @Override

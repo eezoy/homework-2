@@ -93,12 +93,18 @@ public class BossEnemyBuilder extends BasicEnemyBuilder{
     }
 
     @Override
+    public BossEnemyBuilder setElement(String element) {
+        this.element = element;
+        return this;
+    }
+
+    @Override
     public Enemy build() {
         int phase1 = phases.getOrDefault(1, health);
         int phase2 = phases.getOrDefault(2, health / 2);
         int phase3 = phases.getOrDefault(3, health / 4);
 
-        DragonBoss boss = new DragonBoss(name, health, damage, defense, speed, new ArrayList<>(abilities), phase1, phase2, phase3, lootTable, aiBehavior, canFly,hasBreathAttack, wingspan, element);
+        DragonBoss boss = new DragonBoss(name, health, damage, defense, speed, new ArrayList<>(abilities), phase1, phase2, phase3, lootTable, aiBehavior, canFly, hasBreathAttack, wingspan, element);
 
         return boss;
     }

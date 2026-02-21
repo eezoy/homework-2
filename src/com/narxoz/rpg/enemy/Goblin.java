@@ -116,6 +116,10 @@ public class Goblin implements Enemy {
         return lootTable;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setHealth(int health) {
         this.health = health;
     }
@@ -139,15 +143,13 @@ public class Goblin implements Enemy {
     @Override
     public void displayInfo() {
         System.out.println("=== " + name + " (Goblin) ===");
-        System.out.println("Health: " + health + " | Damage: " + damage
-                + " | Defense: " + defense + " | Speed: " + speed);
+        System.out.println("Health: " + health + " | Damage: " + damage + " | Defense: " + defense + " | Speed: " + speed);
+        System.out.println("Element: " + (element != null ? element : "None"));
         System.out.println("Abilities: " + abilities.size() + " ability(ies)");
         for (Ability ability : abilities) {
             System.out.println("  - " + ability.getName() + " (Damage: " + ability.getDamage() + ")");
         }
-        if (lootTable != null) {
-            System.out.println("Loot: " + lootTable.getLootInfo());
-        }
+        System.out.println("Loot: " + lootTable.getLootInfo());
     }
 
     @Override

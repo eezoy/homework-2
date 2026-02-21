@@ -1,7 +1,6 @@
 package com.narxoz.rpg.builder;
 
 import com.narxoz.rpg.combat.Ability;
-import com.narxoz.rpg.enemy.Enemy;
 import com.narxoz.rpg.enemy.*;
 import com.narxoz.rpg.factory.EnemyBehavior;
 import com.narxoz.rpg.loot.LootTable;
@@ -92,6 +91,12 @@ public class BasicEnemyBuilder implements EnemyBuilder {
         return this;
     }
 
+    @Override
+    public EnemyBuilder setElement(String element) {
+        this.element = element;
+        return this;
+    }
+    
     /**
      * Build and validate the Enemy.
      *
