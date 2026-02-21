@@ -72,8 +72,9 @@ public class DragonBoss implements Enemy {
     protected boolean canFly;
     protected boolean hasBreathAttack;
     protected int wingspan;
+    protected String element;
 
-    public DragonBoss(String name, int health, int damage, int defense, int speed, List<Ability> abilities, int phase1Threshold, int phase2Threshold, int phase3Threshold, LootTable lootTable, EnemyBehavior aiBehavior, boolean canFly, boolean hasBreathAttack, int wingspan) {
+    public DragonBoss(String name, int health, int damage, int defense, int speed, List<Ability> abilities, int phase1Threshold, int phase2Threshold, int phase3Threshold, LootTable lootTable, EnemyBehavior aiBehavior, boolean canFly, boolean hasBreathAttack, int wingspan, String element) {
         this.name = name;
         this.health = health;
         this.damage = damage;
@@ -89,6 +90,7 @@ public class DragonBoss implements Enemy {
         this.canFly = canFly;
         this.hasBreathAttack = hasBreathAttack;
         this.wingspan = wingspan;
+        this.element = element;
     }
 
     public String getName() {
@@ -168,7 +170,8 @@ public class DragonBoss implements Enemy {
             this.aiBehavior,
             this.canFly,
             this.hasBreathAttack,
-            this.wingspan
+            this.wingspan,
+            this.element
         );
 
         copy.abilities = new ArrayList<>();
@@ -185,4 +188,22 @@ public class DragonBoss implements Enemy {
         return copy;
     }
 
+    public void multiplyStats(double multiplier) {
+        this.health = (int) (this.health * multiplier);
+        this.damage = (int) (this.damage * multiplier);
+        this.defense = (int) (this.defense * multiplier);
+        this.speed = (int) (this.speed * multiplier);
+    }
+
+    public void setElement(String element) {
+        this.element = element;
+    }
+
+    public String getElement() {
+        return element;
+    }
+
+    public void addPhase(int phaseNumber, int healthThreshold) {
+        this.phases.put(phaseNumber, healthThreshold);
+    }
 }

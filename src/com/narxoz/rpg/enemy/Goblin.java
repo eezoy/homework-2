@@ -61,6 +61,8 @@ public class Goblin implements Enemy {
     protected int speed;
     protected List<Ability> abilities;
     protected LootTable lootTable;
+    protected String element;
+    
 
     public Goblin(String name) {
         this.name = name;
@@ -68,6 +70,7 @@ public class Goblin implements Enemy {
         this.damage = 15;
         this.defense = 5;
         this.speed = 35;
+        this.element = null;
         this.abilities = new ArrayList<>();
     }
 
@@ -154,8 +157,9 @@ public class Goblin implements Enemy {
         copy.damage = this.damage;
         copy.defense = this.defense;
         copy.speed = this.speed;
-        copy.abilities = new ArrayList<>();
+        copy.element = this.element;
 
+        copy.abilities = new ArrayList<>();
         for (Ability ability : this.abilities) {
             copy.abilities.add(ability.clone());
         }
@@ -165,5 +169,20 @@ public class Goblin implements Enemy {
         }
         
         return copy;
+    }
+
+    public void multiplyStats(double multiplier) {
+        this.health = (int) (this.health * multiplier);
+        this.damage = (int) (this.damage * multiplier);
+        this.defense = (int) (this.defense * multiplier);
+        this.speed = (int) (this.speed * multiplier);
+    }
+
+    public void setElement(String element) {
+        this.element = element;
+    }
+
+    public String getElement() {
+        return element;
     }
 }

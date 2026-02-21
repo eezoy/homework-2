@@ -32,6 +32,7 @@ public class BasicEnemyBuilder implements EnemyBuilder {
     protected List<Ability> abilities = new ArrayList<>();
     protected LootTable lootTable;
     protected EnemyBehavior aiBehavior;
+    protected String element;
 
     @Override
     public EnemyBuilder setName(String name) {

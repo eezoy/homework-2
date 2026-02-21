@@ -14,6 +14,7 @@ public class Skeleton implements Enemy {
     protected int speed;
     protected List<Ability> abilities;
     protected LootTable lootTable;
+    protected String element;
 
     public Skeleton(String name) {
         this.name = name;
@@ -119,5 +120,20 @@ public class Skeleton implements Enemy {
         }
 
         return copy;
+    }
+
+    public void multiplyStats(double multiplier) {
+        this.health = (int) (this.health * multiplier);
+        this.damage = (int) (this.damage * multiplier);
+        this.defense = (int) (this.defense * multiplier);
+        this.speed = (int) (this.speed * multiplier);
+    }
+
+    public void setElement(String element) {
+        this.element = element;
+    }
+
+    public String getElement() {
+        return element;
     }
 }

@@ -98,7 +98,7 @@ public class BossEnemyBuilder extends BasicEnemyBuilder{
         int phase2 = phases.getOrDefault(2, health / 2);
         int phase3 = phases.getOrDefault(3, health / 4);
 
-        DragonBoss boss = new DragonBoss(name, health, damage, defense, speed, new ArrayList<>(abilities), phase1, phase2, phase3, lootTable, aiBehavior, canFly,hasBreathAttack, wingspan);
+        DragonBoss boss = new DragonBoss(name, health, damage, defense, speed, new ArrayList<>(abilities), phase1, phase2, phase3, lootTable, aiBehavior, canFly,hasBreathAttack, wingspan, element);
 
         return boss;
     }
